@@ -18,4 +18,11 @@ const mapStateToProps = state => {
     currentItems: state.currentItems
   }
 }
-export default connect(mapStateToProps)(App);
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addItem: newItem => dispatch(actionIsToAddTheNewItem(newItem))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
